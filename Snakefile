@@ -21,7 +21,10 @@ print(file = sys.stderr)
 print(pformat(config["samples"], sort_dicts = False), file = sys.stderr)
 print(file = sys.stderr)
 
-include: "rules/alignment.smk"
+if config.get("use_existing_bams", True):
+    include: "rules/link_existing_bams.smk"
+else:
+    include: "rules/alignment.smk"
 include: "rules/variants.smk"
 include: "rules/insertions.smk"
 include: "rules/deletions.smk"
@@ -43,5 +46,7 @@ def init():
         ]
     return result
 
+
 rule all:
     input: init()
+    
