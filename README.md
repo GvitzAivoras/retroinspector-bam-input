@@ -1,6 +1,6 @@
 RetroInspector is a pipeline to detect and annotate TE insertions and deletions on human genomes sequenced by nanopore sequencing. It has been published on _[Advanced analysis of retrotransposon variation in the human genome with nanopore sequencing using RetroInspector](https://www.nature.com/articles/s41598-025-98847-7)_.
 
-Please cite the article if you use it.
+This version is modified to allow the usage of aligned bam files to skip the first process
 
 # Usage
 
@@ -24,7 +24,7 @@ That's it.
 
 ## Running
 
-You need the hg38 genome, your FASTA files (one for each sample), and to choose where the output will go. 
+You need the hg38 genome, your FASTA or a pair of BAM and BAM.BAI  files (one for each sample), and to choose where the output will go. 
 
 We can check if everything is fine with the '-n' option, that will not run anything:
 
